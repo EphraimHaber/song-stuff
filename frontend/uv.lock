@@ -260,14 +260,10 @@ wheels = [
 ]
 
 [package.optional-dependencies]
-cli = [
+all = [
     { name = "flet-cli" },
-]
-desktop = [
     { name = "flet-desktop", marker = "sys_platform == 'darwin' or sys_platform == 'win32'" },
     { name = "flet-desktop-light", marker = "sys_platform == 'linux'" },
-]
-web = [
     { name = "flet-web" },
 ]
 
@@ -335,11 +331,11 @@ name = "frontend"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "flet", extra = ["cli", "desktop", "web"] },
+    { name = "flet", extra = ["all"] },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "flet", extras = ["cli", "desktop", "web"], specifier = "==0.25.2" }]
+requires-dist = [{ name = "flet", extras = ["all"], specifier = ">=0.25.2" }]
 
 [[package]]
 name = "h11"
